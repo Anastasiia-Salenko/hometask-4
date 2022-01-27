@@ -2,12 +2,10 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { NoteItemInterface } from "../../../../app/redux/types/NoteItem.interface";
 import { NOTE_CATEGORIES } from "../../../../common/constants";
-import {
-  cancelEditNoteButtonClicked,
-  noteCategoryChanged,
-  noteContentChanged,
-  saveNoteButtonClicked,
-} from "../../redux/action-creators";
+import { cancelEditNoteButtonClicked } from "../../redux/cancel-edit-note-button-clicked.slice";
+import { noteCategoryChanged } from "../../redux/note-category-changed.slice";
+import { noteContentChanged } from "../../redux/note-content-changed.slice";
+import { saveNoteButtonClicked } from "../../redux/save-note-button-clicked.slice";
 import { getDatesFromContent } from "../../selectors/getDatesFromContent";
 
 interface Props {
@@ -20,7 +18,7 @@ export const NoteEditor: React.FC<Props> = ({ note }) => {
 
   const handleChangeContent = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(
-      noteContentChanged({
+      noteContentChanged.action({
         id: note.id,
         content: event.target.value,
       })
@@ -29,7 +27,7 @@ export const NoteEditor: React.FC<Props> = ({ note }) => {
 
   const handleChangeCategory = (event: React.ChangeEvent<HTMLSelectElement>) => {
     dispatch(
-      noteCategoryChanged({
+      noteCategoryChanged.action({
         id: note.id,
         category: event.target.value,
       })
@@ -38,7 +36,7 @@ export const NoteEditor: React.FC<Props> = ({ note }) => {
 
   const handleSaveClicked = () => {
     dispatch(
-      saveNoteButtonClicked({
+      saveNoteButtonClicked.action({
         id: note.id,
       })
     );
@@ -46,7 +44,7 @@ export const NoteEditor: React.FC<Props> = ({ note }) => {
 
   const handleCancelClicked = () => {
     dispatch(
-      cancelEditNoteButtonClicked({
+      cancelEditNoteButtonClicked.action({
         id: note.id,
       })
     );

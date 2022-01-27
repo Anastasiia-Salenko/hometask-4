@@ -1,12 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { NoteItemInterface } from "../../../../app/redux/types/NoteItem.interface";
-import {
-  archiveNoteButtonClicked,
-  editNoteButtonClicked,
-  removeNoteButtonClicked,
-  unarchiveNoteButtonClicked,
-} from "../../redux/action-creators";
+import { archiveNoteButtonClicked } from "../../redux/archive-note-button-clicked.slice";
+import { editNoteButtonClicked } from "../../redux/edit-note-button-clicked.slice";
+import { removeNoteButtonClicked } from "../../redux/remove-note-button-clicked.slice";
+import { unarchiveNoteButtonClicked } from "../../redux/unarchive-note-button-clicked.slice";
+
 import { getDatesFromContent } from "../../selectors/getDatesFromContent";
 
 interface Props {
@@ -19,7 +18,7 @@ export const NoteViewer: React.FC<Props> = ({ note }) => {
 
   const handleEditClicked = () => {
     dispatch(
-      editNoteButtonClicked({
+      editNoteButtonClicked.action({
         id: note.id,
       })
     );
@@ -27,7 +26,7 @@ export const NoteViewer: React.FC<Props> = ({ note }) => {
 
   const handleRemoveClicked = () => {
     dispatch(
-      removeNoteButtonClicked({
+      removeNoteButtonClicked.action({
         id: note.id,
       })
     );
@@ -35,7 +34,7 @@ export const NoteViewer: React.FC<Props> = ({ note }) => {
 
   const handleArchiveClicked = () => {
     dispatch(
-      archiveNoteButtonClicked({
+      archiveNoteButtonClicked.action({
         id: note.id,
       })
     );
@@ -43,7 +42,7 @@ export const NoteViewer: React.FC<Props> = ({ note }) => {
 
   const handleUnarchiveClicked = () => {
     dispatch(
-      unarchiveNoteButtonClicked({
+      unarchiveNoteButtonClicked.action({
         id: note.id,
       })
     );
