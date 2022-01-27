@@ -1,15 +1,13 @@
 import { isExistingNote } from "../../../app/redux/type-guards/isExistingNote";
 import { createSlice } from "../../../common/redux/helpers/createSlice";
+import { samePayload } from "../../../common/redux/helpers/samePayload";
 import { changeNote } from "./ho-reducers/change-note.reducer";
 import { removeNote } from "./ho-reducers/remove-note.reducer";
 import { PayloadWithId } from "./types/payload-with-id.type";
 
-export const cancelEditNoteButtonClicked = createSlice<
-  PayloadWithId,
-  PayloadWithId
->({
+export const cancelEditNoteButtonClicked = createSlice<PayloadWithId>({
   type: "CANCEL_EDIT_NOTE_BUTTON_CLICKED",
-  payload: (payloadWithId) => payloadWithId,
+  payload: samePayload,
   reducer: (state, action) => {
     const foundNote = state.notes.find((item) => item.id === action.payload.id);
 

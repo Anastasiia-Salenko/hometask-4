@@ -1,8 +1,9 @@
 import { createSlice } from "../../../common/redux/helpers/createSlice";
+import { noPayload } from "../../../common/redux/helpers/noPayload";
 
-export const showActiveNotesButtonClicked = createSlice<undefined, undefined>({
+export const showActiveNotesButtonClicked = createSlice({
   type: "SHOW_ACTIVE_NOTES_BUTTON_CLICKED",
-  payload: () => undefined,
+  payload: noPayload,
   reducer: (state) => ({
     ...state,
     filter: "active",

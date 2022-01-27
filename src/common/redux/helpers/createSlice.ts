@@ -17,7 +17,7 @@ interface CreateSliceArgs<ActionCreatorPayload, ActionPayload> {
 
 export const createSlice = <
   ActionCreatorPayload = undefined,
-  ActionPayload = undefined
+  ActionPayload = ActionCreatorPayload
 >({
   type,
   payload,
