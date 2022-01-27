@@ -1,11 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  showActiveNotesButtonClicked,
-  showArchivedNotesButtonClicked,
-} from "../../redux/action-creator";
 import { getIsActiveFilterApplied } from "../../../../common/selectors/getIsActiveFilterApplied";
 import { getIsArchivedFilterApplied } from "../../../../common/selectors/getIsArchivedFilterApplied";
+import { showActiveNotesButtonClicked } from "../../redux/show-active-notes-button-clicked.slice";
+import { showArchivedNotesButtonClicked } from "../../redux/show-archived-notes-button-clicked.slice";
 import "./styles.css";
 
 export const NotesFilter = () => {
@@ -14,11 +12,11 @@ export const NotesFilter = () => {
   const isArchivedFilterApplied = useSelector(getIsArchivedFilterApplied);
 
   const handleActiveClicked = () => {
-    dispatch(showActiveNotesButtonClicked());
+    dispatch(showActiveNotesButtonClicked.action());
   };
 
   const handleArchivedClicked = () => {
-    dispatch(showArchivedNotesButtonClicked());
+    dispatch(showArchivedNotesButtonClicked.action());
   };
 
   return (
