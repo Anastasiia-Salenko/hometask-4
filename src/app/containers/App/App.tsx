@@ -1,7 +1,9 @@
+import { NoteListTable } from "../../../features/note-list/components/NoteListTable";
+
 export function App() {
   return (
     <div className="App">
-      <h1>Oblinchik</h1>
+      <NoteListTable />
     </div>
   );
 }
