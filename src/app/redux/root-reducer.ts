@@ -7,12 +7,12 @@ import { PayloadWithId } from "../../features/note-item/redux/types/payload-with
 import { PayloadWithDate } from "../../features/note-item/redux/types/payload-with-date.type";
 import { PayloadWithContent } from "../../features/note-item/redux/types/payload-with-content.type";
 import { PayloadWithCategory } from "../../features/note-item/redux/types/payload-with-category.type";
-// import { actionHandlers as filterNotesActionHandlers } from "../../features/filter-notes/redux/action-handlers";
+import { actionHandlers as filterNotesActionHandlers } from "../../features/filter-notes/redux/action-handlers";
 
 const actionHandlers = {
   ...createNoteActionHandlers,
   ...noteItemActionHandlers,
-  // ...filterNotesActionHandlers,
+  ...filterNotesActionHandlers,
 };
 
 export const rootReducer = (
