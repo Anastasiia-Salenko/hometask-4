@@ -9,7 +9,9 @@ export const cancelEditNoteButtonClicked = createSlice<PayloadWithId>({
   type: "CANCEL_EDIT_NOTE_BUTTON_CLICKED",
   payload: samePayload,
   reducer: (state, action) => {
-    const foundNote = state.notes.find((item) => item.id === action.payload.id);
+    const foundNote = state.notes.list.find(
+      (item) => item.id === action.payload.id
+    );
 
     if (!foundNote) {
       throw new Error(`No note found with id ${action.payload.id}`);

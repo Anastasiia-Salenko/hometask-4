@@ -7,5 +7,5 @@ export const getNotesToDisplay = (state: RootStateInterface) => {
       ? (item: NoteItemInterface) => !item.isArchived
       : (item: NoteItemInterface) => item.isArchived;
 
-  return state.notes.filter(filterCondition);
+  return state.notes.list.filter(filterCondition);
 };

@@ -10,7 +10,7 @@ export const changeNote = <T extends PayloadWithId>(
   ) => NoteItemInterface
 ) => {
   return (state: RootStateInterface, action: PayloadActionInterface<T>) => {
-    const notes = state.notes.map((item) => {
+    const notes = state.notes.list.map((item) => {
       if (item.id === action.payload.id) {
         return itemReducer(item, action);
       }
@@ -20,7 +20,10 @@ export const changeNote = <T extends PayloadWithId>(
 
     return {
       ...state,
-      notes,
+      notes: {
+        ...state.notes,
+        list: notes,
+      },
     };
   };
 };

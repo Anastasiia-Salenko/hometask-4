@@ -1,6 +1,6 @@
-import { NoteItemInterface } from "./NoteItem.interface";
+import { NoteListStateInterface } from "./NoteListState.interface";
 
 export interface RootStateInterface {
-  notes: NoteItemInterface[];
+  notes: NoteListStateInterface;
   filter: string;
 }

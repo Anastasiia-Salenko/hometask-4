@@ -12,6 +12,9 @@ import { saveNoteButtonClicked } from "../../features/note-item/redux/save-note-
 import { cancelEditNoteButtonClicked } from "../../features/note-item/redux/cancel-edit-note-button-clicked.slice";
 import { archiveNoteButtonClicked } from "../../features/note-item/redux/archive-note-button-clicked.slice";
 import { unarchiveNoteButtonClicked } from "../../features/note-item/redux/unarchive-note-button-clicked.slice";
+import { startLoadingNotes } from "../../features/note-list/redux/start-loading-notes.slice";
+import { notesLoadedSuccessfully } from "../../features/note-list/redux/notes-loaded-successfully.slice";
+import { notesLoadingFailure } from "../../features/note-list/redux/notes-loading-failure.slice";
 
 const slices = [
   createNoteButtonClicked,
@@ -25,6 +28,10 @@ const slices = [
   cancelEditNoteButtonClicked,
   archiveNoteButtonClicked,
   unarchiveNoteButtonClicked,
+
+  startLoadingNotes,
+  notesLoadedSuccessfully,
+  notesLoadingFailure,
 ];
 
 export const rootReducer = (

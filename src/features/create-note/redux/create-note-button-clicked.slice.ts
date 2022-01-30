@@ -7,17 +7,22 @@ export const createNoteButtonClicked = createSlice<undefined, PayloadWithId>({
   type: "CREATE_NOTE_BUTTON_CLICKED",
   payload: () => ({ id: uuidv4() }),
   reducer: (state, action) => {
+    const notes = [
+      ...state.notes.list,
+      {
+        content: "",
+        category: NOTE_CATEGORIES.TASK,
+        id: action.payload.id,
+        isDraft: true,
+      },
+    ];
+
     return {
       ...state,
-      notes: [
+      notes: {
         ...state.notes,
-        {
-          content: "",
-          category: NOTE_CATEGORIES.TASK,
-          id: action.payload.id,
-          isDraft: true,
-        },
-      ],
+        list: notes,
+      },
     };
   },
 });

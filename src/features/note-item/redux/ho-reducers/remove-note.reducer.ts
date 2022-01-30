@@ -6,10 +6,15 @@ export const removeNote = (
   state: RootStateInterface,
   action: PayloadActionInterface<PayloadWithId>
 ) => {
-  const notes = state.notes.filter((item) => item.id !== action.payload.id);
+  const notes = state.notes.list.filter(
+    (item) => item.id !== action.payload.id
+  );
 
   return {
     ...state,
-    notes,
+    notes: {
+      ...state.notes,
+      list: notes,
+    },
   };
 };

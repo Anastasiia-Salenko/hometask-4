@@ -5,29 +5,29 @@ export const getNoteStatistics = (state: RootStateInterface) => {
   return [
     {
       category: NOTE_CATEGORIES.TASK,
-      active: state.notes.filter(
+      active: state.notes.list.filter(
         (item) => item.category === NOTE_CATEGORIES.TASK && !item.isArchived
       ).length,
-      archived: state.notes.filter(
+      archived: state.notes.list.filter(
         (item) => item.category === NOTE_CATEGORIES.TASK && item.isArchived
       ).length,
     },
     {
       category: NOTE_CATEGORIES.IDEA,
-      active: state.notes.filter(
+      active: state.notes.list.filter(
         (item) => item.category === NOTE_CATEGORIES.IDEA && !item.isArchived
       ).length,
-      archived: state.notes.filter(
+      archived: state.notes.list.filter(
         (item) => item.category === NOTE_CATEGORIES.IDEA && item.isArchived
       ).length,
     },
     {
       category: NOTE_CATEGORIES.RANDOM_THOUGHT,
-      active: state.notes.filter(
+      active: state.notes.list.filter(
         (item) =>
           item.category === NOTE_CATEGORIES.RANDOM_THOUGHT && !item.isArchived
       ).length,
-      archived: state.notes.filter(
+      archived: state.notes.list.filter(
         (item) =>
           item.category === NOTE_CATEGORIES.RANDOM_THOUGHT && item.isArchived
       ).length,
