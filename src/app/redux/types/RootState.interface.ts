@@ -1,6 +1,8 @@
 import { NoteListStateInterface } from "./NoteListState.interface";
+import { StatisticsStateInterface } from "./StatisticsState.interface";
 
 export interface RootStateInterface {
-  notes: NoteListStateInterface;
   filter: string;
+  notes: NoteListStateInterface;
+  statistics: StatisticsStateInterface;
 }

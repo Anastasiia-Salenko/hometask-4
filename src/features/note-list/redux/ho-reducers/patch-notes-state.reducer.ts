@@ -18,8 +18,6 @@ export const patchNotesState =
 
     return {
       ...state,
-      notes: {
-        ...nextNotesState,
-      },
+      notes: nextNotesState,
     };
   };

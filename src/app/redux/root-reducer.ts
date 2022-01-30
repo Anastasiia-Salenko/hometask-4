@@ -15,6 +15,9 @@ import { unarchiveNoteButtonClicked } from "../../features/note-item/redux/unarc
 import { startLoadingNotes } from "../../features/note-list/redux/start-loading-notes.slice";
 import { notesLoadedSuccessfully } from "../../features/note-list/redux/notes-loaded-successfully.slice";
 import { notesLoadingFailure } from "../../features/note-list/redux/notes-loading-failure.slice";
+import { startLoadingStatistics } from "../../features/note-statistics.ts/redux/start-loading-statistics.slice";
+import { statisticsLoadingSuccessfuly } from "../../features/note-statistics.ts/redux/statistics-loading-successfuly.slice";
+import { statisticsLoadingFailure } from "../../features/note-statistics.ts/redux/statistics-loading-failure.slice";
 
 const slices = [
   createNoteButtonClicked,
@@ -32,6 +35,10 @@ const slices = [
   startLoadingNotes,
   notesLoadedSuccessfully,
   notesLoadingFailure,
+
+  startLoadingStatistics,
+  statisticsLoadingSuccessfuly,
+  statisticsLoadingFailure,
 ];
 
 export const rootReducer = (
